@@ -70,3 +70,4 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 ## Release History
 0.0.1: Initial release
 0.0.2: Documentation
+0.0.3: Removed unnecessary files
