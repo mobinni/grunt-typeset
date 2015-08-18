@@ -1,0 +1,45 @@
+{
+  "name": "grunt-typeset",
+  "description": "A grunt wrapper fort Typeset.js",
+  "version": "0.0.2",
+  "homepage": "https://github.com/mobinni/grunt-typeset",
+  "author": {
+    "name": "Mo Binni",
+    "email": "mobinni@hotmail.com",
+    "url": "http://mobinni.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mobinni/grunt-typeset.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mobinni/grunt-typeset/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/mobinni/grunt-typeset/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.9.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt": "~0.4.5"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.5"
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "dependencies": {
+    "typeset": "^0.1.4"
+  }
+}
