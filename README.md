@@ -54,7 +54,7 @@ grunt.initConfig({
     files: {
       [
         '*.html',
-        '**/*.html,
+        '**/*.html',
         'index.html'
       ]
     },
