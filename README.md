@@ -52,13 +52,24 @@ grunt.initConfig({
       only: '#only-typeset, .these-elements'    // string of a CSS selector to only apply typeset
     },
     dist: {
-      dest: 'dist',
       files: [
         '*.html',
         '**/*.html',
         'index.html'
       ],
     },
+
+    custom_options: {
+     options: {
+         ignore: ' !!!',
+          only: '...',
+          dest: 'dist2'
+      },
+      src: [
+          'test/*/*.html',
+          'test/index.html'
+         ]
+     }
   },
 });
 ```
