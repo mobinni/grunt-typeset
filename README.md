@@ -51,12 +51,13 @@ grunt.initConfig({
       ignore: '.skip, #anything, .which-matches', // string of a CSS selector to skip
       only: '#only-typeset, .these-elements'    // string of a CSS selector to only apply typeset
     },
-    files: {
-      [
+    dist: {
+      dest: 'dist',
+      files: [
         '*.html',
-        '**/*.html,
+        '**/*.html',
         'index.html'
-      ]
+      ],
     },
   },
 });

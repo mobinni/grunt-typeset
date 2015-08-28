@@ -41,7 +41,7 @@ module.exports = function (grunt) {
                 options: {
                     ignore: ' !!!',
                     only: '...',
-                    dest: 'dist'
+                    dest: 'dist2'
                 },
                 src: [
                     'test/*/*.html',
