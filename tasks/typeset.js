@@ -9,14 +9,15 @@
 'use strict';
 var typeset = require('typeset');
 var fs = require('fs');
+
 module.exports = function (grunt) {
 
-    grunt.registerMultiTask('typeset', 'A grunt wrapper fort Typeset.js', function () {
+    grunt.registerMultiTask('typeset', 'A Grunt wrapper for Typeset.js', function () {
         // Merge task-specific and/or target-specific options with these defaults.
         var options = this.options({
             ignore: '', // string of a CSS selector to skip
             only: '',
-            dest: 'dist'
+            dest: 'dist/'
         });
         var src = this.files[0].orig.src;
 
@@ -39,7 +40,7 @@ module.exports = function (grunt) {
         var file = fs.readFileSync(path);
         var output = typeset(file, {
             ignore: options.ignore, // string of a CSS selector to skip
-            only: options.only    // string of a CSS selector to only apply typeset
+            only: options.only, // string of a CSS selector to only apply typeset
         });
         save(output, options.dest, path);
     }
