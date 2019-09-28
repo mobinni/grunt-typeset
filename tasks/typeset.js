@@ -2,7 +2,7 @@
  * grunt-typeset
  * https://github.com/mobinni/grunt-typeset
  *
- * Copyright (c) 2015 Mo Binni
+ * Copyright (c) 2019 Mo Binni
  * Licensed under the MIT license.
  */
 
@@ -13,9 +13,8 @@ var fs = require('fs');
 module.exports = function (grunt) {
 
     grunt.registerMultiTask('typeset', 'A Grunt wrapper for Typeset.js', function () {
-        // Merge task-specific and/or target-specific options with these defaults.
         var options = this.options({
-            ignore: '', // string of a CSS selector to skip
+            ignore: '',
             only: '',
             dest: 'dist/'
         });
@@ -39,8 +38,8 @@ module.exports = function (grunt) {
     function processFile(path, options) {
         var file = fs.readFileSync(path);
         var output = typeset(file, {
-            ignore: options.ignore, // string of a CSS selector to skip
-            only: options.only, // string of a CSS selector to only apply typeset
+            ignore: options.ignore,
+            only: options.only,
         });
         save(output, options.dest, path);
     }

@@ -2,7 +2,7 @@
  * grunt-typeset
  * https://github.com/mobinni/grunt-typeset
  *
- * Copyright (c) 2015 Mo Binni
+ * Copyright (c) 2019 Mo Binni
  * Licensed under the MIT license.
  */
 
