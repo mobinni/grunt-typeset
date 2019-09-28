@@ -1,5 +1,8 @@
 # Exclude directories
 /dist
+/dist1
+/dist2
+/dist3
 
 # Ignore ruby files
 .ruby-version

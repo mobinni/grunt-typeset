@@ -7,42 +7,64 @@
  */
 
 module.exports = function(grunt) {
-
     grunt.initConfig({
 
-        clean: {
-            tests: ['dist']
+    // ! clean
+    clean: {
+        tests: ['dist', 'dist1', 'dist2']
+    },
+
+    // ! jshint
+    jshint: {
+        all: [
+            'Gruntfile.js',
+            'tasks/*.js',
+            '<%= nodeunit.tests %>'
+        ],
+        options: {
+            jshintrc: '.jshintrc'
+        }
+    },
+
+    // ! typeset
+    typeset: {
+
+        custom_task1: {
+            options: {
+                only: '.only-typeset',
+                disable: 'smallCaps',
+                dest: 'dist',
+            },
+            src: ['test/task1.html']
         },
 
-        typeset: {
-            default_options: {
-                options: {
-                    only: '.process-this', // string of a CSS selector to only apply typeset,                    
-                },
-                src: [
-                    'test/*.html',
-                    'test/**/*.html'
-                ]
+        // ! custom options
+        custom_task2: {
+            options: {
+                ignore: '.skip, #skip',
+                only: '#only-typeset, .only-typeset',
+                dest: 'dist',
             },
+            src: ['test/task2.html']
+        }
+    },
 
-            custom_options: {
-                options: {
-                    only: '.process-this', // string of a CSS selector to only apply typeset,
-                    ignore: '.skip-this', // string of a CSS selector to skip,
-                    dest: 'dist2/',
-                },
-                src: [
-                    'test/*.html',
-                    'test/**/*.html'
-                ]
-            },
-        },
+    // ! nodeunit tests.
+    nodeunit: {
+        tests: ['test/*_test.js']
+    }
 
     });
 
+    // ! load tasks
     grunt.loadTasks('tasks');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-nodeunit');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
 
-    grunt.registerTask('test', ['clean', 'typeset']);
-    grunt.registerTask('default', ['clean', 'typeset']);
+    // Whenever the "test" task is run, first clean the "tmp" dir, then run this
+    // plugin's task(s), then test the result.
+    grunt.registerTask('default', ['jshint', 'test']);
+    grunt.registerTask('test', ['clean', 'typeset', 'nodeunit']);
+
 };
