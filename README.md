@@ -3,7 +3,9 @@
 > A Grunt wrapper for [Typeset](https://www.npmjs.com/package/typeset)
 
 [![Demo](http://i.imgur.com/adsiz94.gif)](https://blot.im/typeset)
-**[Typeset](https://blot.im/typeset)** is an html pre-proces­sor for web ty­pog­ra­phy. It uses no client-side JavaScript but gives you hang­ing punc­tu­a­tion, soft hy­phen in­ser­tion, op­ti­cal mar­gin out­dents, small-caps con­ver­sion and punctuation substitution. See the results on [the demo](https://blot.im/typeset). The library is idempotent and runs on the server using Node – I'll adapt it to work on the client soon. The processed HTML & CSS  [renders correctly in IE5](http://i.imgur.com/vVGtD3V.png) and [without any CSS](http://i.imgur.com/ITM0bcG.png)!
+> **[Typeset](https://typeset.lllllllllllllllll.com/)** is an html pre-proces­sor for web ty­pog­ra­phy. It uses no client-side JavaScript but gives you hang­ing punc­tu­a­tion, soft hy­phen in­ser­tion, op­ti­cal mar­gin out­dents, small-caps con­ver­sion and punctuation substitution.
+
+---
 
 Feel free to contribute to the code.
 
@@ -63,7 +65,8 @@ typeset: {
 }
 ```
 
-### Examples
+### Example 1:
+
 ```javascript
 // ! typeset options
 module.exports = grunt => {
@@ -72,7 +75,7 @@ module.exports = grunt => {
             options: {
                 ignore: '.skip, #skip',
                 only: '#only-typeset, .only-typeset',
-                disable: '',
+                disable: 'smallCaps',
                 dest: 'dist',
             },
             src: [
@@ -83,6 +86,8 @@ module.exports = grunt => {
     });
 };
 ```
+
+### Example 2:
 
 ```javascript
 // ! custom tasks
@@ -134,8 +139,9 @@ This plugin is compatible with Grunt `^1.0.4`
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-0.0.1: Initial release   
-0.0.2: Documentation   
-0.0.3: Removed unnecessary files
-0.0.4: Updated typeset v0.2.2
-0.0.5: Updated functions, documentation, and license
+- 0.0.1: Initial release
+- 0.0.2: Documentation
+- 0.0.3: Removed unnecessary files
+- 0.0.4: Updated typeset v0.2.2
+- 0.0.5: Improved functions, updated documentation
+- 0.0.6: Updated test units, and MIT license
