@@ -9,26 +9,26 @@
 module.exports = function(grunt) {
     grunt.initConfig({
 
-    // ! clean
+    // ! clean configs
     clean: {
-        tests: ['dist', 'dist1', 'dist2']
+        tests: ['dist']
     },
 
-    // ! jshint
+    // ! jshint configs
     jshint: {
         all: [
             'Gruntfile.js',
-            'tasks/*.js',
-            '<%= nodeunit.tests %>'
+            'tasks/*.js'
         ],
         options: {
             jshintrc: '.jshintrc'
         }
     },
 
-    // ! typeset
+    // ! typeset configs
     typeset: {
 
+        // ! task1
         custom_task1: {
             options: {
                 only: '.only-typeset',
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
             src: ['test/task1.html']
         },
 
-        // ! custom options
+        // ! task2
         custom_task2: {
             options: {
                 ignore: '.skip, #skip',
@@ -49,22 +49,16 @@ module.exports = function(grunt) {
         }
     },
 
-    // ! nodeunit tests.
-    nodeunit: {
-        tests: ['test/*_test.js']
-    }
-
     });
 
     // ! load tasks
     grunt.loadTasks('tasks');
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-nodeunit');
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
     // Whenever the "test" task is run, first clean the "tmp" dir, then run this
     // plugin's task(s), then test the result.
     grunt.registerTask('default', ['jshint', 'test']);
-    grunt.registerTask('test', ['clean', 'typeset', 'nodeunit']);
+    grunt.registerTask('test', ['clean', 'typeset']);
 
 };
