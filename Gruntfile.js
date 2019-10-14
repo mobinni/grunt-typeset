@@ -2,74 +2,65 @@
  * grunt-typeset
  * https://github.com/mobinni/grunt-typeset
  *
- * Copyright (c) 2015 Mo Binni
+ * Copyright (c) 2019 Mo Binni
  * Licensed under the MIT license.
  */
 
-'use strict';
-
-module.exports = function (grunt) {
-
-    // Project configuration.
+module.exports = function(grunt) {
     grunt.initConfig({
-        jshint: {
-            all: [
-                'Gruntfile.js',
-                'tasks/*.js',
-                '<%= nodeunit.tests %>'
-            ],
-            options: {
-                jshintrc: '.jshintrc'
-            }
-        },
 
-        // Before generating any new files, remove any previously-created files.
-        clean: {
-            tests: ['tmp']
-        },
+    // ! clean configs
+    clean: {
+        tests: ['dist']
+    },
 
-        // Configuration to be run (and then tested).
-        typeset: {
-            default_options: {
-                options: {},
-                src: [
-                    'test/*.html',
-                    'test/**/*.html'
-                ]
-            },
-            custom_options: {
-                options: {
-                    ignore: ' !!!',
-                    only: '...',
-                    dest: 'dist2'
-                },
-                src: [
-                    'test/*/*.html',
-                    'test/index.html'
-                ]
-            }
-        },
-
-        // Unit tests.
-        nodeunit: {
-            tests: ['test/*_test.js']
+    // ! jshint configs
+    jshint: {
+        all: [
+            'Gruntfile.js',
+            'tasks/*.js',
+            'Typeset/src/*/**.js',
+            'Typeset/test/*.js',
+        ],
+        options: {
+            jshintrc: '.jshintrc'
         }
+    },
+
+    // ! typeset configs
+    typeset: {
+
+        // ! task1
+        custom_task1: {
+            options: {
+                only: '.only-typeset',
+                disable: 'smallCaps',
+                dest: 'dist',
+            },
+            src: ['test/task1.html']
+        },
+
+        // ! task2
+        custom_task2: {
+            options: {
+                ignore: '.skip, #skip',
+                only: '#only-typeset, .only-typeset',
+                dest: 'dist',
+            },
+            src: ['test/task2.html']
+        }
+    },
 
     });
 
-    // Actually load this plugin's task(s).
+    // ! load tasks
     grunt.loadTasks('tasks');
-
-    // These plugins provide necessary tasks.
-    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-nodeunit');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
 
     // Whenever the "test" task is run, first clean the "tmp" dir, then run this
     // plugin's task(s), then test the result.
-    grunt.registerTask('test', ['clean', 'typeset', 'nodeunit']);
-
-    // By default, lint and run all tests.
     grunt.registerTask('default', ['jshint', 'test']);
+    grunt.registerTask('test', ['clean', 'typeset']);
 
 };

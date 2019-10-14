@@ -2,52 +2,61 @@
  * grunt-typeset
  * https://github.com/mobinni/grunt-typeset
  *
- * Copyright (c) 2015 Mo Binni
+ * Copyright (c) 2019 Mo Binni
  * Licensed under the MIT license.
  */
 
 'use strict';
-var typeset = require('typeset');
-var fs = require('fs');
-module.exports = function (grunt) {
 
-    grunt.registerMultiTask('typeset', 'A grunt wrapper fort Typeset.js', function () {
-        // Merge task-specific and/or target-specific options with these defaults.
-        var options = this.options({
-            ignore: '', // string of a CSS selector to skip
-            only: '',
-            dest: 'dist'
-        });
-        var src = this.files[0].orig.src;
+const typeset = require('typeset');
+const fs = require('fs');
 
-        grunt.file.expand(src).forEach(function (path) {
-            var isDir = grunt.file.isDir(path);
-            process(isDir, path, options);
+module.exports = grunt => {
+
+    function save(output, dest, path) {
+        const pathArr = path.split('/');
+        pathArr[0] = dest;
+        const savePath = pathArr.join('/');
+        grunt.file.write(savePath, output);
+    }
+
+    function processFile(path, {
+        ignore,
+        only,
+        disable,
+        dest
+    }) {
+        const file = fs.readFileSync(path);
+        const output = typeset(file, {
+            ignore,
+            only,
+            disable,
         });
-    });
+        save(output, dest, path);
+    }
 
     function process(isDir, path, options) {
         if (isDir) {
-            var files = fs.readdirSync(path);
+            const files = fs.readdirSync(path);
             console.log(files);
         } else {
             processFile(path, options);
         }
     }
 
-    function processFile(path, options) {
-        var file = fs.readFileSync(path);
-        var output = typeset(file, {
-            ignore: options.ignore, // string of a CSS selector to skip
-            only: options.only    // string of a CSS selector to only apply typeset
+    grunt.registerMultiTask('typeset', 'A Grunt wrapper for Typeset.js', function() {
+        const options = this.options({
+            ignore: '',
+            only: '',
+            disable: '',
+            dest: 'dist'
         });
-        save(output, options.dest, path);
-    }
 
-    function save(output, dest, path) {
-        var pathArr = path.split('/');
-        pathArr[0] = dest;
-        var savePath = pathArr.join('/');
-        grunt.file.write(savePath, output);
-    }
+        const src = this.files[0].orig.src;
+
+        grunt.file.expand(src).forEach(path => {
+            const isDir = grunt.file.isDir(path);
+            process(isDir, path, options);
+        });
+    });
 };
