@@ -2,13 +2,15 @@
 A Grunt wrapper for [Typeset](https://www.npmjs.com/package/typeset)
 
 [![Demo](http://i.imgur.com/adsiz94.gif)](https://blot.im/typeset)
-**[Typeset](https://typeset.lllllllllllllllll.com/)** is an html pre-proces­sor for web ty­pog­ra­phy. It uses no client-side JavaScript but gives you hang­ing punc­tu­a­tion, soft hy­phen in­ser­tion, op­ti­cal mar­gin out­dents, small-caps con­ver­sion and punctuation substitution.
+
+**[Typeset](https://typeset.lllllllllllllllll.com/)** is an html pre-proces­sor for web ty­pog­ra­phy. It uses no client-side JavaScript and gives you hang­ing punc­tu­a­tion, soft hy­phen in­ser­tion, op­ti­cal mar­gin out­dents, small-caps con­ver­sion and punctuation substitution.
 
 ---
 
 Feel free to contribute to the code.
 
 ## Getting started
+
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 
