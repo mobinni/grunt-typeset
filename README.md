@@ -1,13 +1,9 @@
 # grunt-typeset
 A Grunt wrapper for [Typeset](https://www.npmjs.com/package/typeset)
 
-[![Demo](http://i.imgur.com/adsiz94.gif)](https://blot.im/typeset)
-
 **[Typeset](https://typeset.lllllllllllllllll.com/)** is an html pre-proces­sor for web ty­pog­ra­phy. It uses no client-side JavaScript and gives you hang­ing punc­tu­a­tion, soft hy­phen in­ser­tion, op­ti­cal mar­gin out­dents, small-caps con­ver­sion and punctuation substitution.
 
 ---
-
-Feel free to contribute to the code.
 
 ## Getting started
 
@@ -30,7 +26,7 @@ Tweak or add the following CSS:
 
 ```css
 /* Small caps */
-/*.small-caps {font-variant: small-cap/*s;}*/
+/*.small-caps {font-variant: small-cap;}*/
 
 /* Double quote (") marks */
 .pull-double{margin-left:-.46em}
@@ -39,6 +35,9 @@ Tweak or add the following CSS:
 /* Single quote (') marks */
 .pull-single{margin-left:-.27em}
 .push-single{margin-right:.27em}
+
+.pull-double, .push-double,
+.pull-single, .push-single {display: inline-block}
 
 /* Optical margin alignment for particular letters */
 .pull-T, .pull-V, .pull-W, .pull-Y {margin-left: -0.07em}
@@ -61,7 +60,7 @@ typeset: {
         ignore: '.skip, #skip', // string of a CSS selector to skip
         only: '#only-typeset, .only-typeset', // string of a CSS selector to only apply typeset,
         disable: '', // [quotes, hyphenate, ligatures, smallCaps, punctuation, hangingPunctuation, spaces]
-        dest: 'dist', // default destination folder
+        dest: 'dist' // default destination folder
     }
 }
 ```
@@ -132,17 +131,8 @@ The following features may be disabled:
 - hangingPunctuation
 - spaces
 
-
 ## Info
 This plugin is compatible with Grunt `^1.0.4`
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
-## Release History
-- 0.0.1: Initial release
-- 0.0.2: Documentation
-- 0.0.3: Removed unnecessary files
-- 0.0.4: Updated typeset v0.2.2
-- 0.0.5: Improved functions, updated documentation
-- 0.0.6: Updated test units, and MIT license

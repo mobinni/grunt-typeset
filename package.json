@@ -1,28 +1,39 @@
 {
   "name": "grunt-typeset",
+  "version": "0.0.8",
   "description": "A Grunt wrapper for Typeset.js",
-  "version": "0.0.4",
+  "keywords": [
+    "dropcap",
+    "gruntplugin",
+    "hyphenation",
+    "smallcap",
+    "type",
+    "typeset",
+    "typography"
+  ],
   "homepage": "https://github.com/mobinni/grunt-typeset",
-  "author": {
-    "name": "Mo Binni",
-    "email": "mobinni@hotmail.com",
-    "url": "http://mobinni.io"
+  "bugs": {
+    "url": "https://github.com/mobinni/grunt-typeset/issues"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/mobinni/grunt-typeset.git"
   },
-  "bugs": {
-    "url": "https://github.com/mobinni/grunt-typeset/issues"
+  "author": {
+    "name": "Mo Binni",
+    "email": "mobinni@hotmail.com",
+    "url": "http://mobinni.io"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/mobinni/grunt-typeset/blob/master/LICENSE-MIT"
-    }
-  ],
+  "contributors": {
+    "name": "Daniel Haim",
+    "email": "danielhaim1@mac.com",
+    "url": "https://danielhaim.com"
+  },
   "scripts": {
     "test": "grunt test"
+  },
+  "dependencies": {
+    "typeset": "0.2.5"
   },
   "devDependencies": {
     "grunt": "^1.0.4",
@@ -32,10 +43,10 @@
   "peerDependencies": {
     "grunt": "latest"
   },
-  "keywords": [
-    "gruntplugin"
-  ],
-  "dependencies": {
-    "typeset": "0.2.2"
-  }
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/mobinni/grunt-typeset/blob/master/LICENSE-MIT"
+    }
+  ]
 }
