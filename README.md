@@ -132,7 +132,7 @@ The following features may be disabled:
 - spaces
 
 ## Info
-This plugin is compatible with Grunt `^1.0.4`
+This plugin is compatible with Grunt `^1.0.3`
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
