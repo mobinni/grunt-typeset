@@ -1,6 +1,6 @@
 {
   "name": "grunt-typeset",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A Grunt wrapper for Typeset.js",
   "keywords": [
     "dropcap",
@@ -33,7 +33,7 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "typeset": "0.2.5"
+    "typeset": "0.2.6"
   },
   "devDependencies": {
     "grunt": "^1.0.4",
