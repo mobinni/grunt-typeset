@@ -1,15 +1,15 @@
 {
   "name": "grunt-typeset",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "A Grunt wrapper for Typeset.js",
   "keywords": [
+    "typeset",
+    "typography",
+    "typesetting",
     "dropcap",
-    "gruntplugin",
     "hyphenation",
     "smallcap",
-    "type",
-    "typeset",
-    "typography"
+    "type"
   ],
   "homepage": "https://github.com/mobinni/grunt-typeset",
   "bugs": {
@@ -33,11 +33,9 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "typeset": "0.2.6"
-  },
-  "devDependencies": {
-    "grunt": "^1.0.4",
-    "grunt-contrib-clean": "2.0.0",
+    "typeset": "^0.2.7",
+    "grunt": "^1.1.0",
+    "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-jshint": "^2.1.0"
   },
   "license": "MIT"
