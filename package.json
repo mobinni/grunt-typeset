@@ -1,6 +1,6 @@
 {
   "name": "grunt-typeset",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A Grunt wrapper for Typeset.js",
   "keywords": [
     "typeset",
@@ -26,14 +26,13 @@
   },
   "contributors": {
     "name": "Daniel Haim",
-    "email": "danielhaim1@mac.com",
     "url": "https://danielhaim.com"
   },
   "scripts": {
     "test": "grunt test"
   },
   "dependencies": {
-    "typeset": "^0.2.7",
+    "typeset": "^0.2.8",
     "grunt": "^1.1.0",
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-jshint": "^2.1.0"
