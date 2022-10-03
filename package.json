@@ -1,6 +1,6 @@
 {
   "name": "grunt-typeset",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A Grunt wrapper for Typeset.js",
   "keywords": [
     "typeset",
@@ -33,10 +33,10 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "typeset": "^0.2.7",
-    "grunt": "^1.1.0",
-    "grunt-contrib-clean": "^2.0.0",
-    "grunt-contrib-jshint": "^2.1.0"
+    "grunt": "1.5.3",
+    "grunt-contrib-clean": "2.0.1",
+    "grunt-contrib-jshint": "3.2.0",
+    "typeset": "0.3.2"
   },
   "license": "MIT"
 }
